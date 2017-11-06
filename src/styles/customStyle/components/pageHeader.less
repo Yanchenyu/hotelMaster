@@ -1,0 +1,46 @@
+@import '../../common/themeSetting';
+
+.header {
+    background-color: @themeColor;
+    color: @panelColor;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: @ftSize4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    &>span {
+      font-size:20px
+    }
+    .back {
+        position: absolute;
+        left: 4px;
+        top: 0;
+        color: @panelColor;
+        align-items: center;
+        span {
+            display: inline-block;
+            font-size: @ftSize3;
+        }
+    }
+    .maintain {
+        position: absolute;
+        right: 4px;
+        top: 0;
+        color: @panelColor;
+        align-items: center;
+        span {
+            display: inline-block;
+            font-size: @ftSize3;
+        }
+        img {
+            transform: rotate(180deg)
+        }
+    }
+    .showOff {
+        display: none;
+    }
+}

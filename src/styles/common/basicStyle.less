@@ -1,0 +1,210 @@
+/**
+ * @author Yan
+ * @email ma_thilda@126.com
+ * @desc [自定义样式]
+*/
+
+/* 字体大小
+@ftSize-min: 10px;
+@ftSize-small: 12px;
+@ftSize-normal: 14px;
+@ftSize-hl: 16px;
+@ftSize-h2: 20px;
+*/
+
+@import './themeSetting';
+
+/* 字体大小 */
+.cus-min {
+  font-size: 10px;
+}
+
+.cus-small {
+  font-size: @ftSize1;
+}
+
+.cus-normal {
+  font-size: @ftSize2;
+}
+
+.cus-h1 {
+  font-size: @ftSize3;
+}
+
+.cus-huge {
+  font-size: @ftSize4;
+}
+
+.cus-h2 {
+  font-size: @ftSize5;
+}
+
+.cus-giant {
+  font-size: 22px;
+}
+
+/* 自定义颜色 */
+.cus-themeColor {
+  color: @themeColor;
+}
+
+.cus-priceColor {
+  color: @priceColor;
+}
+
+.cus-ftColorBlack {
+  color: @ftColorBlack;
+}
+
+.cus-ftColorBlack2 {
+  color: @ftColorBlack2;
+}
+
+.cus-ftColorBlack3 {
+  color: @ftColorBlack3;
+}
+
+.cus-pageColor {
+  color: @pageColor;
+}
+
+.cus-popColor {
+  color: @popColor;
+}
+
+.cus-hintColor {
+  color: @hintColor;
+}
+
+.cus-splitColor {
+  color: @splitColor;
+}
+
+.cus-placeholderColor {
+  color: @placeholderColor;
+}
+
+.cus-panelColor {
+  color: @panelColor;
+}
+
+.cus-borderColor {
+  color: @borderColor;
+}
+
+.cus-uncheckedColor {
+  color: @uncheckedColor;
+}
+
+/* Flex 布局 */
+.cus-flexrow, .cus-flexrow-center {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+}
+
+.cus-flexwrap, .cus-flexwrap-center {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+.cus-flexcolumn, .cus-flexcolumn-center {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+
+// 附带水平和垂直居中设定
+.cus-flexrow-center, .cus-flexcolumn-center, .cus-flexwrap-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* link箭头 */
+/* 父元素如果被设定为 display:flex;一定要将position改成非static； 因为使用absolute*/
+.link-right {
+  display: block;
+  padding-right: 13px; /* 左侧给箭头预留位置 15px - (6*1.414)/2 = 10.75px对角线除以2*/
+}
+
+.link-up, .link-down {
+  display: block;
+  padding-right: 15px;
+}
+
+.link-right::after, .link-up::after, .link-down::after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #C8C8CD;
+  border-style: solid;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.link-right::after {
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+}
+
+.link-up::after {
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(-90deg);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(-90deg);
+}
+
+.link-down::after {
+  -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(90deg);
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(90deg);
+}
+
+/* 细线条 */
+.thinLine {
+  display: block;
+  margin: 0;
+  height: 1px;
+  /*width: 100%; TODO 检查如何显式写出 */
+  background-color: @splitColor;
+}
+
+.splitbar {
+  display: block;
+  width: 100%;
+  height: 9px;
+  background-color: @popColor;
+  border-bottom: 1px solid @pageColor;
+}
+
+/* vux xicon svg 颜色填充*/
+.cell-x-icon {
+  fill: @ftColorBlack3;
+}
+
+.svgicon {
+  color: @themeColor;
+}
+
+.svgiconGray {
+  color: @ftColorBlack3;
+}
+
+.svgiconGrayInvalid{
+  color: @ftColorGray;
+}
+.svgiconBlack {
+  color: @defaultColor;
+}
+
+/* 行高1em，减少多余的行距 */
+.standardLine {
+  line-height: 1em;
+}
+
+/* 隐藏 */
+.hide {
+  display: none !important;
+}

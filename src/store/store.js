@@ -3,7 +3,11 @@ import thunk from 'redux-thunk'
 import {reducers} from '../reducers/reducers'
 
 const initState = {
-    userData: {}
+    userData: {},
+    hotelMasterData: {},
+    hotelRoomMes: {
+        token: ''
+    }
 };
 
 export const store = createStore(

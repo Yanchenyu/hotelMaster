@@ -5,7 +5,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import md5 from 'blueimp-md5'
 import hotelMaster from '../images/hotelMaster.png'
-import '../styles/login.less'
+import '../styles/customStyle/views/login.less'
 import {Link} from 'react-router-dom'
 
 class Login extends Component {
@@ -60,7 +60,6 @@ class Login extends Component {
                 <div className='loginBtn'>
                     <button onClick={this.handleClick} className={btnClass}>主人登录</button>
                 </div>
-                <div><Link to='/roomList'>aaaa</Link></div>
             </div>
         )
     }

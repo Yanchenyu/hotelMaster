@@ -18,7 +18,19 @@ function hotelMasterData(state={}, action){
     }
 }
 
+function hotelRoomMes(state={}, action) {
+    switch(action.type) {
+        case 'SET_TOKEN':
+            return Object.assign({},state,{
+                token: action.data
+            })
+        default:
+            return state
+    }
+}
+
 export const reducers = combineReducers({
     userData,
-    hotelMasterData
+    hotelMasterData,
+    hotelRoomMes
 })
