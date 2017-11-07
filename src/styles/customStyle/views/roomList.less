@@ -1,10 +1,25 @@
 @import '../../common/themeSetting';
-
+.listFocusHead {
+  position: absolute;
+  top: -1px;
+  left: -10px;
+  width: 10px;
+  height: 65px;
+  background-color: @splitColor;
+}
+.firstListFocus {
+  top: 0;
+  height: 64px;
+}
 .page-wrap {
   padding-left: 10px;
   background-color: @panelColor;
   border-bottom: @borderBottom;
   margin-top: 44px;
+  // 客房列表
+  .listFocus {
+    background-color: @splitColor;
+  }
   .roomList {
     height: 64px;
     justify-content: space-between;
@@ -56,13 +71,30 @@
         display: -webkit-inline-flex;
         align-items: flex-end;
         padding-bottom: 3px;
-        font-size: $ftSize2;
+        font-size: @ftSize2;
         color: #666;
         border-bottom: 0.7px dashed #666;
         div {
           display: inline-block;
           line-height: 1.3em;
         }
+      }
+    }
+    // 客房状态
+    .hotelRoomState {
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row-reverse;
+      flex: 1;
+      width: 80px;
+      font-size: @ftSize2;
+      color: #666;
+      margin-right: 2.5px;
+      div {
+        margin-right: 2.5px;
+      }
+      .outTime {
+        color: #ff7c8e;
       }
     }
   }
