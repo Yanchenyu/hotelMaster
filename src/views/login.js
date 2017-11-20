@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import classnames from 'classnames'
-import actions from '../actions/actionCreator'
+import actions from '../actions/loginActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import md5 from 'blueimp-md5'
@@ -14,6 +14,7 @@ class Login extends Component {
         this.usrHandleChange = this.usrHandleChange.bind(this);
         this.paswHandleChange = this.paswHandleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.handleForget = this.handleForget.bind(this);
         this.state = {
             userName: '',
             password: ''
@@ -43,12 +44,15 @@ class Login extends Component {
         };
         this.props.dispatch(actions.loginAction(userData));
     }
+    handleForget () {
+        alert('请到前台办理')
+    }
     render(){
         let btnClass = classnames({
             'btnClass': this.state.userName==''||this.state.password==''
         });
         return (
-            <div className='bg'>
+            <div className='login-page'>
                 <section>
                     <img src={hotelMaster} width="200px" />
                 </section>
@@ -56,7 +60,7 @@ class Login extends Component {
                     <input type='text' placeholder='请输入手机号' onChange={this.usrHandleChange} />
                     <input type='password' placeholder='请输入密码' onChange={this.paswHandleChange} />
                 </div>
-                <div className='forgetPassword'>忘记密码</div>
+                <div onClick={this.handleForget} className='forgetPassword'>忘记密码</div>
                 <div className='loginBtn'>
                     <button onClick={this.handleClick} className={btnClass}>主人登录</button>
                 </div>
@@ -72,6 +76,6 @@ class Login extends Component {
 // }
 
 // export default connect(mapDispatchToProps)(Login)
-const mapStateToProps = () => ({});
+// const mapStateToProps = () => ({});
 
-export default connect(mapStateToProps)(Login)
+export default connect()(Login)

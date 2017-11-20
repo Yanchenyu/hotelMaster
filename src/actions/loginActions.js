@@ -14,7 +14,7 @@ function loginAction(data){
                 if(response.ResultCode==0){
                     dispatch(setUserData(data));
                     dispatch(setHotelData(response.Data));
-                    dispatch(setToken(response.Data.Token));
+                    dispatch(setHotelRoomMes({'token': response.Data.Token}));
                     storeSet('HotelMaster', 'UserData', response.Data);
                     history.push('/roomList');
                 }
@@ -40,22 +40,11 @@ function setHotelData(data) {
 }
 
 // 设置token
-function setToken(data) {
+export const setHotelRoomMes = (data) => {
     return {
-        type: 'SET_TOKEN',
+        type: 'SET_HOTEL_ROOM_MES',
         data
     }
 }
 
-// 获取房间列表
-function getHotelRoomList(data) {
-    return dispatch => {
-        return fetch(`${serviceIpHotelMaster}/HostelRoom/QueryHostelRoomList?Token=${data.token}`,{method: 'get'})
-            .then(response => response.json())
-            .then(response => {
-                return response
-            })
-    }
-}
-
-export default {loginAction,setHotelData,getHotelRoomList}
+export default {loginAction,setHotelData}

@@ -54,6 +54,7 @@
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.4",
     "pkg-dir": "^2.0.0",
     "pubsub-js": "^1.5.7",
     "react": "^15.6.1",

@@ -18,12 +18,28 @@ function hotelMasterData(state={}, action){
     }
 }
 
-function hotelRoomMes(state={}, action) {
+function hotelRoomData(state={}, action) {
     switch(action.type) {
-        case 'SET_TOKEN':
+        case 'SET_HOTEL_ROOM_MES':
             return Object.assign({},state,{
-                token: action.data
+                hotelRoomMes: {
+                    ...state.hotelRoomMes,  // 如果不加这句话，则是浅拷贝，会直接替换掉hotelRoomMes里面所有的数据
+                    ...action.data
+                }
             })
+        case 'SET_HOTEL_ROOM_DATA':
+            return Object.assign({},state,{
+                hotelRoomDataDetail: action.data
+            })
+        case 'SET_ROOM_STATUS':
+            return Object.assign({}, state, {
+                hotelRoomStatus: action.data
+            })
+        case 'SET_LOGIN_WAY_INDEX':
+            return Object.assign({}, state, {
+                hotelRoomStatus: action.data
+            })
+            
         default:
             return state
     }
@@ -32,5 +48,5 @@ function hotelRoomMes(state={}, action) {
 export const reducers = combineReducers({
     userData,
     hotelMasterData,
-    hotelRoomMes
+    hotelRoomData
 })
